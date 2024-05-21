@@ -1,0 +1,29 @@
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:9000/eureka
+spring:
+  application:
+    name: notify-service
+  kafka:
+    consumer:
+      bootstrap-servers: localhost:9092
+      group-id: ecommerce
+      auto-offset-reset: earliest
+      key-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+      value-deserializer: org.springframework.kafka.support.serializer.JsonDeserializer
+      properties:
+        spring.json.trusted.packages: '*'
+  mail:
+    host: smtp.gmail.com
+    port: 587
+    username: shuhari0123@gmail.com
+    password: olyy eqck agva ldeb
+    properties:
+      mail:
+        smtp:
+          auth: true
+          starttls:
+            enable: true
+server:
+  port: 9005
